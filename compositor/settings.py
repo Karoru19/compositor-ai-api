@@ -25,7 +25,7 @@ SECRET_KEY = "8bwsrb*8-^*tw*hnqifi4vkxe)dpok=%#9@2ano)_t6nc1jof_"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -49,7 +49,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
-    'corsheaders.middleware.CorsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -86,7 +86,7 @@ DATABASES_DEFAULT = {
     "NAME": "compositor",
     "USER": "postgres",
     "PASSWORD": "postgres",
-    "HOST": "localhost",
+    "HOST": "db",
     "PORT": "5432",
 }
 
@@ -139,7 +139,7 @@ REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.AllowAny"],
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework.authentication.BasicAuthentication",
-        'rest_framework.authentication.SessionAuthentication'
+        "rest_framework.authentication.SessionAuthentication"
         "rest_framework.authentication.TokenAuthentication",
     ],
     "DEFAULT_RENDERER_CLASSES": (
