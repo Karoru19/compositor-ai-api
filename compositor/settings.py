@@ -39,11 +39,13 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # additional apps
-    "restframework",
+    "rest_framework",
     "rest_framework.authtoken",
     "django_filters",
     "corsheaders",
+    "django_extensions",
     # created apps
+    "compositor.music",
 ]
 
 MIDDLEWARE = [
@@ -139,7 +141,7 @@ REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.AllowAny"],
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework.authentication.BasicAuthentication",
-        "rest_framework.authentication.SessionAuthentication"
+        "rest_framework.authentication.SessionAuthentication",
         "rest_framework.authentication.TokenAuthentication",
     ],
     "DEFAULT_RENDERER_CLASSES": (
@@ -153,6 +155,11 @@ REST_FRAMEWORK = {
 # CORS settings
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+GRAPH_MODELS = {
+  'all_applications': True,
+  'group_models': True,
+}
 
 # flake8: noqa
 
