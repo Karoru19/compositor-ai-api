@@ -17,8 +17,21 @@ Including another URLconf
 from django.conf import settings
 from django.urls import path, include
 from django.conf.urls.static import static
+from rest_framework.documentation import include_docs_urls
+
+schema_view = (
+    include_docs_urls(
+        title="Compositor Api", public=False, description=f"<h3>version 1.0b1</h3>"
+    ),
+)
 
 urlpatterns = [
+    path(
+        "schema/",
+        include_docs_urls(
+            title="Compositor Api", public=False, description=f"<h3>version 1.0b1</h3>"
+        ),
+    ),
     path("api/", include("compositor.music.urls")),
     # path("admin/", admin.site.urls),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),

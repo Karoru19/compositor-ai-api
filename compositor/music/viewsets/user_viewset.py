@@ -6,7 +6,7 @@ from compositor.music.serializers import (
     PasswordResetConfirmSerializer,
     ProfileSerializer,
     LoginSerializer,
-    RegisterSerializer
+    RegisterSerializer,
 )
 
 
@@ -38,7 +38,9 @@ class LoginViewSet(viewsets.GenericViewSet, mixins.CreateModelMixin):
         return response.Response(status=status.HTTP_200_OK)
 
 
-class ProfileViewSet(viewsets.GenericViewSet, mixins.ListModelMixin):
+class ProfileViewSet(
+    viewsets.GenericViewSet, mixins.ListModelMixin, mixins.UpdateModelMixin
+):
     queryset = User.objects
     serializer_class = ProfileSerializer
 
