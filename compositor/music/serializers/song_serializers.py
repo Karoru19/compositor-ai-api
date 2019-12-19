@@ -5,7 +5,7 @@ from compositor.music.models import Song
 class SongCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Song
-        fields = ["mp3", "id", "filename"]
+        fields = ["midi"]
 
 
 class SongReadSerializer(serializers.ModelSerializer):
