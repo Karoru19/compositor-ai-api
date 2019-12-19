@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
 
-class BaseViewSet(viewsets.ModelViewSet):
+class ReadUpdateSerializerMixin:
     serializer_class = None
     read_serializer_class = None
     update_serializer_class = None
@@ -11,4 +11,4 @@ class BaseViewSet(viewsets.ModelViewSet):
             return self.serializer_class
         if self.action == 'update':
             return self.update_serializer_class
-        return self.serializer_class
+        return self.read_serializer_class

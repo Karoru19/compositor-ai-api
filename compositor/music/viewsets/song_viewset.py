@@ -1,4 +1,4 @@
-# from rest_framework import viewsets
+from rest_framework import viewsets
 # from rest_framework.filters import OrderingFilter
 # from django_filters.rest_framework import DjangoFilterBackend
 from compositor.music.models import Song
@@ -7,10 +7,10 @@ from compositor.music.serializers import (
     SongReadSerializer,
     SongUpdateSerializer,
 )
-from compositor.music.viewsets import BaseViewSet
+from compositor.music.viewsets import ReadUpdateSerializerMixin
 
 
-class SongViewSet(BaseViewSet):
+class SongViewSet(ReadUpdateSerializerMixin, viewsets.ModelViewSet):
     queryset = Song.objects.all()
     # filter_backends = (DjangoFilterBackend, OrderingFilter)
     # ordering_fields = ("filename", "created_at")

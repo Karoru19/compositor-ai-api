@@ -1,5 +1,5 @@
 # flake8: noqa
-from .base_viewset import BaseViewSet
+from .base_viewset import ReadUpdateSerializerMixin
 from .song_viewset import SongViewSet
 from .composition_viewset import CompositionViewSet
 from .history_viewset import HistoryViewSet
