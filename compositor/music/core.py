@@ -14,7 +14,7 @@ def compose(files, filename):
     for file in files:
         copyfile(file, f"{TEST_DIR}{os.path.basename(file)}")
 
-    subprocess.run(["python2", "ai_composer/main.py"])
+    # subprocess.run(["python2", "ai_composer/main.py"])
 
     subprocess.run(
         [
